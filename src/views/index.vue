@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <el-button @click="toLogin">login</el-button>
-    <el-button type="primary">Primary</el-button>
+    <el-button type="primary">更新</el-button>
     <el-button type="success">Success</el-button>
     <div>
       <el-checkbox v-model="checked1" label="Option 1" size="large" />

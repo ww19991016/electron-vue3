@@ -45,7 +45,7 @@
             Offline activities
           </el-checkbox>
           <el-checkbox value="Simple brand exposure" name="type">
-            Simple brand exposure
+            Simple brand exposure1111122222------
           </el-checkbox>
         </el-checkbox-group>
       </el-form-item>
