@@ -1,7 +1,7 @@
 {
   "name": "vite_vue3",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "electron/main.cjs",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "electron:serve": "set NODE_ENV=development && electron .",
     "electron:build": "npm run build && electron-builder",
-    "publish": "electron-builder --publish=always"
+    "publish": "npm run build && electron-builder --publish=always"
   },
   "build": {
     "appId": "com.example.yourapp",
