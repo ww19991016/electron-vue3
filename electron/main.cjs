@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("node:path");
-const updater = require("./main/updater"); // 引入更新模块
+const updater = require("./updater"); // 引入更新模块
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
