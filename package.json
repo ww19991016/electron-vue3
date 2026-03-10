@@ -1,16 +1,42 @@
 {
   "name": "vite_vue3",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "main": "electron/main.cjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
-    "electron:build": "npm run build && electron-builder"
+    "electron:serve": "set NODE_ENV=development && electron .",
+    "electron:build": "npm run build && electron-builder",
+    "publish": "electron-builder --publish=always"
+  },
+  "build": {
+    "appId": "com.example.yourapp",
+    "productName": "YourAppName",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "ww19991016",
+      "repo": "electron-vue3"
+    }
   },
   "dependencies": {
+    "electron-log": "^5.4.3",
     "electron-updater": "^6.8.3",
     "element-plus": "^2.13.3",
     "vue": "^3.5.13",
@@ -18,6 +44,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
+    "concurrently": "^9.2.1",
     "electron": "^40.7.0",
     "electron-builder": "^26.8.1",
     "sass-embedded": "^1.97.3",

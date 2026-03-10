@@ -1,6 +1,7 @@
 <template>
-  <HelloWorld msg="Vite + Vue" />
-  <RouterView />
+  <h1>更新一版2.0</h1>
+  <HelloWorld msg="Vite + Vue2" />
+  <router-view></router-view>
 </template>
 <script setup>
 import { RouterView } from "vue-router";
