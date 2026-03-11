@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- 触发检查更新的按钮 -->
-    <button @click="handleCheckUpdate">检查更新</button>
+    <el-button type="primary" @click="handleCheckUpdate">检查更新</el-button>
+    <el-button type="primary" @click="back">back</el-button>
 
     <!-- 进度条容器，当 downloading 为 true 时显示 -->
     <div v-if="downloading" class="progress-container">
@@ -15,6 +16,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import router from "../router";
 
 // 定义响应式数据
 const downloading = ref(false);
@@ -42,6 +44,9 @@ onMounted(() => {
 // 2. 检查更新的方法
 const handleCheckUpdate = () => {
   window.electronAPI.checkForUpdate();
+};
+const back = () => {
+  router.push("/");
 };
 </script>
 

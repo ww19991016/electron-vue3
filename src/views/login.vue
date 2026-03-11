@@ -68,6 +68,7 @@
 
 <script setup>
 import { ref, reactive, watch, onMounted, computed } from "vue";
+import router from "../router";
 const props = defineProps([""]);
 const emit = defineEmits([""]);
 const form = reactive({
@@ -83,6 +84,7 @@ const form = reactive({
 
 const onSubmit = () => {
   console.log("submit!");
+  router.push("/update");
 };
 </script>
 
