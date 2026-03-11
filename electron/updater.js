@@ -48,8 +48,15 @@ autoUpdater.on("update-not-available", (info) => {
 });
 
 autoUpdater.on("download-progress", (progressObj) => {
-  log.info(`下载进度: ${progressObj.percent}%`);
-  mainWindow.webContents.send("update-progress", progressObj.percent);
+  // log.info(`下载进度: ${progressObj.percent}%`);
+  // mainWindow.webContents.send("update-progress", progressObj.percent);
+  // 确保 mainWindow 已经定义且网页内容已加载
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow.webContents.send("update-progress", {
+      percent: Math.floor(progressObj.percent),
+      speed: Math.ceil(progressObj.bytesPerSecond / 1024), // 转换为 KB/s
+    });
+  }
 });
 
 autoUpdater.on("update-downloaded", (info) => {
