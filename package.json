@@ -24,7 +24,13 @@
       "package.json"
     ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "installerSidebar": "sidebar.bmp",
+        "uninstallerSidebar": "sidebar-uninstall.bmp"
+      }
     },
     "mac": {
       "target": "dmg"

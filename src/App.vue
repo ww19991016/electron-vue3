@@ -1,6 +1,6 @@
 <template>
-  <h1>更新一版3.0</h1>
-  <HelloWorld msg="Vite + Vue2223334445555" />
+  <h1>更新一4.0</h1>
+  <HelloWorld msg="Vite + Vue3" />
   <router-view></router-view>
 </template>
 <script setup>
